@@ -1,0 +1,2 @@
+rails new blog
+rails g controller welcome index
