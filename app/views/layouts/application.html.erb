@@ -9,6 +9,23 @@
   </head>
 
   <body>
+  <header>
+    <nav class="be-blue white large-padding bold-font">
+      <ul style="list-style-type: none" class="no-list row center-xs middle-xs">
+        <li class="col-xs ">
+          <h1 class="no-marging no-padding" id="logo"><%= link_to "BLOG ON RAILS", root_path %></h1>
+        </li>
+        <li class="col-xs bold-font">
+          Articulos
+        </li>
+        <li class="col-xs bold-font">
+          Iniciar sesión
+        </li>
+        <li class="col-xs bold-font">
+          Cerrar sesión
+        </li>
+      </ul>
+  </header>
     <%= yield %>
   </body>
 </html>
