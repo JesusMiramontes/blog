@@ -1,5 +1,11 @@
 <div style="width: 80%;margin: 0 auto;">
   <h1>Crear articulo</h1>
+  <!--Muesta los errores ocurridos al intentar guardar articulo -->
+  <% @article.errors.full_messages.each do |message|%>
+      <div class="error top-space">
+        * <%= message %>
+      </div>
+  <%end%>
   <%= form_for(@article) do |f| %>
     <div class="field">
       <%= f.text_field :title, placeholder:"El mejor cuento de todos", class:"form-control" %>
