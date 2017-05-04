@@ -1,0 +1,21 @@
+<h1><%=accion%> un articulo</h1>
+
+<%= form_for(@article) do |f| %>
+
+    <!--Muesta los errores ocurridos al intentar guardar articulo -->
+    <% @article.errors.full_messages.each do |message|%>
+        <div class="error top-space">
+          * <%= message %>
+        </div>
+    <%end%>
+
+    <div class="field">
+      <%= f.text_field :title, placeholder: "El mejor cuento de todos...", class:"form-control"%>
+    </div>
+    <div class="field">
+      <%= f.text_area :body, placeholder: "Erase una vez...", style:" height:300px; font-family:'Roboto';	", class:"form-control "%>
+    </div>
+    <div class="field">
+      <%= f.submit "Guardar", class:"btn be-blue white"%>
+    </div>
+<%end%>
