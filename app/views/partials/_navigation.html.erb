@@ -1,0 +1,27 @@
+<header>
+  <nav class="be-blue white large-padding bold-font">
+    <ul style="list-style-type: none" class="no-list row center-xs middle-xs">
+      <li class="col-xs ">
+        <h1 class="no-marging no-padding" id="logo"><%= link_to "BLOG ON RAILS", root_path %></h1>
+      </li>
+      <li class="col-xs bold-font">
+        <%= link_to "Crear articulo", new_article_path %>
+      </li>
+      <% if user_signed_in? %>
+          <li class="col-xs">
+            <%= link_to "Nuevo articulo", new_article_path%>
+          </li>
+          <li class="col-xs">
+            <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete%>
+          </li>
+      <%else%>
+          <li class="col-xs">
+            <%= link_to "Iniciar sesión", new_user_session_path%>
+          </li>
+          <li class="col-xs">
+            <%= link_to "Registro", new_user_registration_path%>
+          </li>
+      <%end%>
+    </ul>
+  </nav>
+</header>
