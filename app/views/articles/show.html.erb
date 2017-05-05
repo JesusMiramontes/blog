@@ -1,4 +1,7 @@
 <h1><%=@article.title%></h1>
+<p>
+  Autor: <%= @article.user.email %>
+</p>
 <div>
   <%= @article.body %>
 </div>
