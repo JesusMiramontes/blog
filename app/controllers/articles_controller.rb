@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :set_article, except: [:index, :new]
+  before_action :set_article, except: [:index, :new, :create]
 
   def index
     @articles = Article.all
