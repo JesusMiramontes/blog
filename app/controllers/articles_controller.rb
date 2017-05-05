@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article.update_visits_count
   end
 
   def new
