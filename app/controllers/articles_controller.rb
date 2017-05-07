@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article.update_visits_count
+    @comment = Comment.new #Necesario para comentarios en articulo
   end
 
   def new
