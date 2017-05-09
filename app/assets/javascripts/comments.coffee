@@ -5,4 +5,4 @@
 $(document).on "ajax:success", "form#comments-form", (ev,data)->
   console.log data
   $(this).find("textarea").val("") # Limpia el textarea despues de agregar el comentario
-  $("#comments-box").append("<li> #{data.body} </li>")
+  $("#comments-box").append("<li> #{data.body} - #{data.user.email}</li>")
