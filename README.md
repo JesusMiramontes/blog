@@ -1,24 +1,25 @@
 # README
+https://blog-jesusmiramontes.c9users.io
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple web-app using Ruby on Rails. 
 
-Things you may want to cover:
+**Features:**
+* User authentication.
+* Visits counter on each post.
+* Comments on each post.
 
-* Ruby version
+**Configuration:**
+I'm using Mysql2
 
-* System dependencies
+* adapter: mysql2
+* encoding: utf8
+* pool: 5
+* username: root
+* password: root
+* host: localhost
+* port: **3307**
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**How to run the test suite**
+1. rails db:create
+1. rails db:migrate
+1. rails s
