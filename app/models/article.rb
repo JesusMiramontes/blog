@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   validates :body, presence: true, length: {minimum: 10} #Valida tamaño minimo
   before_create :set_visits_count
   has_many :comments
+  after_create :save_categories
 
   #Requerido por paperclip :cover es el "nombre" del adjunto
   has_attached_file :cover, styles: { medium: "1280*720", thumb:"800*600"}
@@ -15,8 +16,18 @@ class Article < ApplicationRecord
     self.update(visits_count: self.visits_count + 1)
   end
 
+  def categories=(value) #Custom setter
+    @categories = value
+  end
+
   private
   def set_visits_count
     self.visits_count=0;
+  end
+
+  def save_categories
+    @categories.each do |category_id|
+      HasCategory.create(category_id: category_id, article_id: self.id)
+    end
   end
 end
