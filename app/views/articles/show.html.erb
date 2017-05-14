@@ -5,6 +5,9 @@
 <p>
   Visitas: <%= @article.visits_count %>
 </p>
+<div class="field">
+  <%= image_tag @article.cover.url() %>
+</div>
 <div>
   <%= @article.body %>
 </div>

@@ -5,6 +5,12 @@ class Article < ApplicationRecord
   before_create :set_visits_count
   has_many :comments
 
+  #Requerido por paperclip :cover es el "nombre" del adjunto
+  has_attached_file :cover, styles: { medium: "1280*720", thumb:"800*600"}
+
+  # Validate content type
+  validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
+
   def update_visits_count
     self.update(visits_count: self.visits_count + 1)
   end

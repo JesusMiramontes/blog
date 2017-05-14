@@ -18,3 +18,6 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+#dont include images, cover files
+/public/system/articles/covers/*

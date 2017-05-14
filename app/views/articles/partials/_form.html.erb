@@ -13,6 +13,9 @@
       <%= f.text_field :title, placeholder: "El mejor cuento de todos...", class:"form-control"%>
     </div>
     <div class="field">
+      Portada: <%= f.file_field :cover %>
+    </div>
+    <div class="field">
       <%= f.text_area :body, placeholder: "Erase una vez...", style:" height:300px; font-family:'Roboto';	", class:"form-control "%>
     </div>
     <div class="field">
