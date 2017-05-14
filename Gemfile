@@ -53,3 +53,6 @@ gem 'devise', '~> 4.2', '>= 4.2.1'
 
 #Jquery turbolinks
 gem 'jquery-turbolinks'
+
+# gem that allows upload files to the website. IMPORTANT! Install "Imagemagick"
+gem 'paperclip'
