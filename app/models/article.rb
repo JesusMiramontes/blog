@@ -6,6 +6,9 @@ class Article < ApplicationRecord
   has_many :comments
   after_create :save_categories
 
+  has_many :has_categories
+  has_many :categories, through: :has_categories
+
   #Requerido por paperclip :cover es el "nombre" del adjunto
   has_attached_file :cover, styles: { medium: "1280*720", thumb:"800*600"}
 
