@@ -57,3 +57,6 @@ gem 'jquery-turbolinks'
 
 # gem that allows upload files to the website. IMPORTANT! Install "Imagemagick"
 gem 'paperclip'
+
+#Gem to separate the article in: draft, published, etc
+gem "aasm"
