@@ -1,4 +1,7 @@
 class Article < ApplicationRecord
+
+  include AASM
+
   belongs_to :user
   validates :title, presence: true, uniqueness: true #Valida que no esté vacio, y no esté repetido
   validates :body, presence: true, length: {minimum: 10} #Valida tamaño minimo
@@ -21,6 +24,19 @@ class Article < ApplicationRecord
 
   def categories=(value) #Custom setter
     @categories = value
+  end
+
+  aasm column: "status" do
+    state :in_draft, initial: true
+    state :published
+
+    event :publish do
+      transitions from: :in_draft, to: :published
+    end
+
+    event :unpublish do
+      transitions from: :published, to: :in_draft
+    end
   end
 
   private
