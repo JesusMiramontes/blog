@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_admin!, only: [:destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.publicados.ultimos
   end
 
   def show
