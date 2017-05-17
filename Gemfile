@@ -63,3 +63,6 @@ gem "aasm"
 
 #Gem to paginate
 gem 'will_paginate'
+
+#Gem markdown editor
+gem 'epic-editor-rails', :git => 'https://github.com/GioRosales/epic-editor-rails.git'
