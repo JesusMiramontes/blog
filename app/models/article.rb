@@ -19,7 +19,7 @@ class Article < ApplicationRecord
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
 
   scope :publicados, -> { where(status: "published") }
-  scope :ultimos, -> { order("created_at").limit(10) }
+  scope :ultimos, -> { order("created_at") }
 
   def update_visits_count
     self.update(visits_count: self.visits_count + 1)
