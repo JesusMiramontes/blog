@@ -60,3 +60,6 @@ gem 'paperclip'
 
 #Gem to separate the article in: draft, published, etc
 gem "aasm"
+
+#Gem to paginate
+gem 'will_paginate'
