@@ -14,7 +14,7 @@
   <%= image_tag @article.cover.url() %>
 </div>
 <div>
-  <%= @article.body %>
+  <%= @article.body.html_safe %>
 </div>
 <div class="top-padding">
   <%=link_to "Editar articulo", edit_article_path%>
