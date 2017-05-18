@@ -1,6 +1,6 @@
 <h1><%=accion%> un articulo</h1>
 
-<%= form_for(@article) do |f| %>
+<%= form_for(@article, html: { id:"articles_form" }) do |f| %>
 
     <!--Muesta los errores ocurridos al intentar guardar articulo -->
     <% @article.errors.full_messages.each do |message|%>
@@ -16,8 +16,9 @@
       Portada: <%= f.file_field :cover %>
     </div>
     <div class="field">
-      <%= f.text_area :body, placeholder: "Erase una vez...", style:" height:300px; font-family:'Roboto';	", class:"form-control "%>
+      <%= f.hidden_field :body, class:"form-control ", id:"body-textarea"%>
     </div>
+    <div id="epiceditor" style="height: 250px;"></div>
     <div class="field">
       <label>Categorias: </label>
       <% @categories.each do |category|%>
@@ -30,3 +31,17 @@
       <%= f.submit "Guardar", class:"btn be-blue white"%>
     </div>
 <%end%>
+
+<script>
+  var editor = new EpicEditor({
+     file:{
+         name:"nuevo_articulo"
+     }
+  });
+
+  editor.load();
+
+  $("#articles_form").on("submit", function () {
+      $("#body-textarea").val( editor.exportFile("nuevo_articulo", "html") );
+  });
+</script>
